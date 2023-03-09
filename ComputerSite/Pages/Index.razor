@@ -1,9 +1,19 @@
 ﻿@page "/"
+@inject ComputerSite.Repository.AvailableElementsRepository repo
 
 <div class="text-center">
 	<h1>Create your own computer</h1>
 </div>
-
-<div class="row-cols-3">
-
+<div class="text-center">
+	<h1>Select @_seletableElement</h1>
 </div>
+<div class="row col-12 col-sm-6 col-lg-4">
+	@foreach (ND1.IElement el in _elements)
+	{
+		<ComputerSite.Shared.Elements.ElementComponent
+			Element="el"
+			OnAddClick="() => _onClick(el)"
+			ShowAddButton="_showAddButton"/>
+	}
+</div>
+

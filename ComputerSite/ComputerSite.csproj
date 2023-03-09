@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ND1 2023\ND1 2023.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>

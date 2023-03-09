@@ -1,4 +1,5 @@
 ﻿using ND1;
+using System.Linq;
 using System.Text;
 
 namespace ND1_2023.Computer
@@ -99,7 +100,8 @@ namespace ND1_2023.Computer
 
         public IEnumerable<IElement> GetAllElements()
         {
-            return _elements;
+            return _elements.OfType<IElementContainer>()
+                .SelectMany(x => x.GetAllElements()).Concat(_elements);
         }
     }
 }
